@@ -1,10 +1,8 @@
-About Me
+I develop fast and accurate methods for modeling complex systems, including wave propagation, fluid dynamics, and other mathematical models. My work focuses on generating verified outputs, visualizations, and simulations that help understand system behavior clearly and efficiently.
 
-I develop compressed arithmetic methods to solve complex systems quickly and accurately, including 1D and 2D wave equations. My approach generates verified outputs and visualizations while keeping my private intuition secure.
+Some of my key scientific formulas I work with include:
 
-Key Formulas:
-
-1D Wave:
+1D Wave Equation (Finite Difference Form):
 
 𝜓
 𝑖
@@ -74,7 +72,7 @@ t
 
 )
 
-2D Wave:
+2D Wave Equation (Finite Difference Form):
 
 𝜓
 𝑖
@@ -184,35 +182,6 @@ t
 
 ]
 
-Example Python (1D wave):
+I provide Python simulations and calculators so others can reproduce results, explore wave behavior, and learn from them. While my personal derivation methods and mental shortcuts remain protected, shared formulas and code allow users to experiment and gain insight into complex systems.
 
-import numpy as np
-
-Nx, Nt = 10, 20
-c, dx, dt = 1, 0.1, 0.1
-k = (c*dt/dx)**2
-
-psi = np.zeros((Nx, Nt+1))
-psi[:,0] = [0,0,0,0,0,1,0,0,0,0]
-psi[:,1] = psi[:,0]
-
-for t in range(1, Nt):
-    for i in range(1, Nx-1):
-        psi[i,t+1] = 2*psi[i,t] - psi[i,t-1] + k*(psi[i+1,t] - 2*psi[i,t] + psi[i-1,t])
-
-print(psi)
-import numpy as np
-
-Nx, Nt = 10, 20
-c, dx, dt = 1, 0.1, 0.1
-k = (c*dt/dx)**2
-
-psi = np.zeros((Nx, Nt+1))
-psi[:,0] = [0,0,0,0,0,1,0,0,0,0]
-psi[:,1] = psi[:,0]
-
-for t in range(1, Nt):
-    for i in range(1, Nx-1):
-        psi[i,t+1] = 2*psi[i,t] - psi[i,t-1] + k*(psi[i+1,t] - 2*psi[i,t] + psi[i-1,t])
-
-print(psi)
+My goal is to accelerate learning, science, and research by sharing reproducible examples, code, and visualizations. Explore my work on GitHub:
