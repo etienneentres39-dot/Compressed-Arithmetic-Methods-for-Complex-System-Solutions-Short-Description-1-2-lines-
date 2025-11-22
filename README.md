@@ -201,3 +201,18 @@ for t in range(1, Nt):
         psi[i,t+1] = 2*psi[i,t] - psi[i,t-1] + k*(psi[i+1,t] - 2*psi[i,t] + psi[i-1,t])
 
 print(psi)
+import numpy as np
+
+Nx, Nt = 10, 20
+c, dx, dt = 1, 0.1, 0.1
+k = (c*dt/dx)**2
+
+psi = np.zeros((Nx, Nt+1))
+psi[:,0] = [0,0,0,0,0,1,0,0,0,0]
+psi[:,1] = psi[:,0]
+
+for t in range(1, Nt):
+    for i in range(1, Nx-1):
+        psi[i,t+1] = 2*psi[i,t] - psi[i,t-1] + k*(psi[i+1,t] - 2*psi[i,t] + psi[i-1,t])
+
+print(psi)
